@@ -1,0 +1,15 @@
+{
+  "name": "library-lite",
+  "version": "1.0.0",
+  "description": "Personal library app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0"
+  }
+}
