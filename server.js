@@ -1,13 +1,14 @@
 // server.js
-// import express with ES Modules
-import express from 'express';
+import express from 'express'; // import express with ES Modules
+const app = express(); // create instance of Express app
+const dirname = import.meta.dirname; // get dirname
 
-// create instance of Express app
-const app = express();
+// MIDDLEWARE - next step in article
+// app.use(express.static('public'));
 
 // handle GET request
 app.get('/', (request, response) => {
-    response.send('If you can see this, the server sent a response!')
+    response.sendFile(`${dirname}/index.html`);
 })
 
 // have server listen on PORT
