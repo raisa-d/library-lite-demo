@@ -7,5 +7,22 @@
 </head>
 <body>
     <h1>Welcome To Your Library!</h1>
+    <form action="/add" method="POST">
+        <label>Title
+            <input 
+                placeholder="The Stranger" 
+                type="text"
+                name="title"
+                required >
+        </label>
+        <label>Author
+            <input 
+                placeholder="Albert Camus" 
+                type="text"
+                name="author"
+                required >
+        </label>
+        <button type="submit">Add Book</button>
+    </form>
 </body>
 </html>
