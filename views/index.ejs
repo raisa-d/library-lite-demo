@@ -1,3 +1,4 @@
+<!-- index.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +24,16 @@
                 required >
         </label>
         <button type="submit">Add Book</button>
+        <h2>Your Books</h2>
+        <ul>
+            <% for(const book of bookList) { %>
+                <li>
+                    <%= book.title %> by <%= book.author %>
+                    <input type="button" class="delete" value="DELETE"></input>
+                </li>
+            <% } %>
+        </ul>
     </form>
+    <script src='/public/main.js'></script>
 </body>
 </html>
