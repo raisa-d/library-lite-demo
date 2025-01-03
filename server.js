@@ -78,7 +78,6 @@ function createServer(books) {
     try {
       // delete book by title
       const result = await books.deleteOne({title: request.body.title});
-      console.log('Book deleted');
       response.json('Book deleted');
     } catch(err) {
       console.error(`Failed to delete book: ${err}`);
