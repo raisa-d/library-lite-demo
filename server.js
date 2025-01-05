@@ -49,8 +49,7 @@ function createServer(books) {
   // handle GET request
   app.get('/', async (request, response) => {
     try {
-      const cursor = await books.find();
-      const bookList = await cursor.toArray();
+      const bookList = await books.find().toArray();
       response.render('index.ejs', { bookList: bookList }) // render EJS, pass in bookList
     } catch(err) {
       console.error(`Error retrieving list of books ${err}`);
