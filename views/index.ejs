@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>Welcome To Your Library!</h1>
     <form action="/add" method="POST">
+        <h2>Add Books</h2>
         <label>Title
             <input 
                 placeholder="The Stranger" 
@@ -26,31 +28,42 @@
         <button type="submit">Add Book</button>
     </form>
     <!-- Want To Read List -->
-    <h2>Want To Read</h2>
-    <ul>
-        <% for(const book of bookList) { 
-            if(book.read === false) { %>
-                <li>
-                    <%= book.title %> by <%= book.author %>
-                    <input type="button" class="delete" value="DELETE"></input>
-                    <input type="button" class="mark-read" value="MARK READ"></input>
-                </li>
-            <% }
-        } %>
-    </ul>
+     <section>
+        <h2>Want To Read</h2>
+        <ul>
+            <% for(const book of bookList) { 
+                if(book.read === false) { %>
+                    <li>
+                        <%= book.title %> by <%= book.author %>
+                        <input type="button" class="delete btn" value="DELETE"></input>
+                        <input type="button" class="mark-read btn" value="MARK READ"></input>
+                    </li>
+                <% }
+            } %>
+        </ul>
+     </section>
     <!-- Read List -->
-    <h2>Read</h2>
-    <ul>
-        <% for(const book of bookList) { 
-            if(book.read === true) { %>
-                <li>
-                    <%= book.title %> by <%= book.author %>
-                    <input type="button" class="delete" value="DELETE"></input>
-                    <input type="button" class="mark-unread" value="MARK UNREAD"></input>
-                </li>
-            <% }
-        } %>
-    </ul>
+     <section>
+        <h2>Read</h2>
+        <ul>
+            <% for(const book of bookList) { 
+                if(book.read === true) { %>
+                    <li>
+                        <%= book.title %> by <%= book.author %>
+                        <input type="button" class="delete btn" value="DELETE"></input>
+                        <input type="button" class="mark-unread btn" value="MARK UNREAD"></input>
+                    </li>
+                <% }
+            } %>
+        </ul>
+     </section>
+     <footer>
+        <div>
+            <a href="#" target="_blank">Tutorial</a>
+            <a href="https://github.com/raisa-d/library-lite-demo" target="_blank">Source Code</a>
+        </div>
+        <small>&copy; Raisa Dorzback</small>
+     </footer>
     <!-- link to main.js file -->
     <script src="/main.js"></script>
 </body>

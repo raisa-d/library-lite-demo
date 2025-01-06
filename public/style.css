@@ -1,0 +1,157 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #c5eddb;
+    font-size: 62.5%;
+}
+
+h1 {
+    color: #000;
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 1px solid #D9D0E7;
+}
+
+li {
+    font-size: 1.6rem;
+}
+
+html > * {
+    color: #292432;
+}
+
+h1, form {
+    text-align: center;
+}
+
+/* BUTTONS */
+
+button, .btn {
+    margin-top: 1rem;
+    background: #85BAA1;
+    padding: 1rem;
+    border: .2rem solid #85BAA1;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    font-weight: bold;
+}
+
+    button:hover,.btn:hover {
+        background: #D9D0E7;
+        border-color: #D9D0E7;
+        cursor: pointer;
+    }
+
+        .btn {
+            margin: 0.5rem;
+            padding: 0.7rem;
+        }
+
+/* SECTIONS */
+form {
+    padding: 1rem 0 1rem 0;
+}
+
+    form, section {
+        border-radius: 1rem;
+        background: #433D50;
+        color: white;
+        margin: 1rem 0;
+    }
+
+        form h2 {
+            margin: 0;
+            padding-bottom: 1rem;
+        }
+
+section {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+ul {
+    padding: 0 1rem;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    border-bottom: 1px solid white;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INPUTS */
+label {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 1rem;
+    font-size: 1.6rem;
+}
+
+input {
+    background: #433D50;
+    border: .1rem solid white;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: .5rem 0;
+    font-size: 1.4rem;
+}
+
+    input::placeholder {
+        color: #fff;
+    }
+
+    form input {
+        color: white;
+    }
+
+    /* FOOTER */
+    footer {
+        font-size: 1.6rem;
+        text-align: center;
+        color: black;
+        padding: 0.5rem 0;
+    }
+
+        /* LINKS */
+        a {
+            color: #5e5373;
+        }
+
+        a:hover {
+            color: #292432;
+        }
+
+
+/* MEDIA QUERIES */
+@media all and (min-width: 425px) {
+    section, form {
+        margin: 1rem 2rem;
+    }
+}
+
+@media all and (min-width: 950px) {
+    form, section {
+        margin: 1rem 6rem;
+    }
+}
+
+@media all and (min-width: 1145px) {
+    form, section {
+        margin: 1rem 15rem;
+    }
+}
+
+@media all and (min-width: 1300px) {
+    form, section {
+        margin: 1rem 25rem;
+    }
+}
