@@ -1,25 +1,25 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
-    background: #c5eddb;
+    background: #164E63;
     font-size: 62.5%;
 }
 
 h1 {
-    color: #000;
+    color: #fff;
     font-size: 2.2rem;
 }
 
 h2 {
     font-size: 2rem;
-    border-bottom: 1px solid #D9D0E7;
+    border-bottom: 0.1rem solid #0A3342;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0;
 }
 
 li {
     font-size: 1.6rem;
-}
-
-html > * {
-    color: #292432;
 }
 
 h1, form {
@@ -29,19 +29,16 @@ h1, form {
 /* BUTTONS */
 
 button, .btn {
-    margin-top: 1rem;
-    background: #85BAA1;
-    padding: 1rem;
-    border: .2rem solid #85BAA1;
+    background: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: .2rem solid #BEC9DF;
     font-size: 1.4rem;
-    border-radius: 2rem;
-    font-weight: bold;
 }
 
     button:hover,.btn:hover {
-        background: #D9D0E7;
-        border-color: #D9D0E7;
         cursor: pointer;
+        border-bottom-color: #164E63;
     }
 
         .btn {
@@ -56,15 +53,9 @@ form {
 
     form, section {
         border-radius: 1rem;
-        background: #433D50;
-        color: white;
-        margin: 1rem 0;
+        background: #fff;
+        border: 0.2rem solid #0A3342; 
     }
-
-        form h2 {
-            margin: 0;
-            padding-bottom: 1rem;
-        }
 
 section {
     display: flex;
@@ -80,7 +71,7 @@ ul {
 
 li {
     list-style: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #164e635c;
     padding: 0.5rem 0;
     display: flex;
     align-items: center;
@@ -97,21 +88,13 @@ label {
 }
 
 input {
-    background: #433D50;
-    border: .1rem solid white;
+    border: none;
     border-radius: 2rem;
+    border: 0.1rem solid #0A3342;
     padding: 1rem;
     margin: .5rem 0;
     font-size: 1.4rem;
 }
-
-    input::placeholder {
-        color: #fff;
-    }
-
-    form input {
-        color: white;
-    }
 
     /* FOOTER */
     footer {
@@ -122,12 +105,12 @@ input {
     }
 
         /* LINKS */
-        a {
-            color: #5e5373;
+        a, small {
+            color: #fff;
         }
 
         a:hover {
-            color: #292432;
+            color: #ccc;
         }
 
 

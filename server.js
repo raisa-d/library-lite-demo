@@ -64,7 +64,6 @@ function createServer(books) {
         author: request.body.author,
         read: false
       });
-      console.log(result);
       response.redirect('/');
     } catch(err) {
       console.error(`Could not add book: ${err}`);
