@@ -10,7 +10,6 @@ import { MongoClient } from 'mongodb'; // import MongoClient with ES Modules
 VARIABLES
 =========== */
 const app = express(); // create instance of Express app
-const dirname = import.meta.dirname; // get dirname
 const PORT = process.env.PORT;
 const password = process.env.DB_PASSWORD;
 const uri = `mongodb+srv://j97129688:${password}@cluster0.u0qtw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
