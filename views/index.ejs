@@ -3,63 +3,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Document</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Welcome To Your Library!</h1>
-    <form action="/add" method="POST">
+    <h1>Welcome To Library Lite!</h1>
+    <!-- Add Books Form -->
+    <section class="form-section flex flex-col align-center justify-center">
         <h2>Add Books</h2>
-        <label>Title
-            <input 
-                placeholder="The Stranger" 
-                type="text"
-                name="title"
-                required >
-        </label>
-        <label>Author
-            <input 
-                placeholder="Albert Camus" 
-                type="text"
-                name="author"
-                required >
-        </label>
-        <button type="submit">Add Book</button>
-    </form>
-    <!-- Want To Read List -->
-     <section>
-        <h2>Want To Read</h2>
-        <ul>
-            <% for(const book of bookList) { 
-                if(book.read === false) { %>
-                    <li>
-                        <%= book.title %> by <%= book.author %>
-                        <input type="button" class="delete btn" value="Delete"></input>
-                        <input type="button" class="mark-read btn" value="Mark Read"></input>
-                    </li>
-                <% }
-            } %>
-        </ul>
-     </section>
-    <!-- Read List -->
-     <section>
-        <h2>Read</h2>
-        <ul>
-            <% for(const book of bookList) { 
-                if(book.read === true) { %>
-                    <li>
-                        <%= book.title %> by <%= book.author %>
-                        <input type="button" class="delete btn" value="Delete"></input>
-                        <input type="button" class="mark-unread btn" value="Mark Unread"></input>
-                    </li>
-                <% }
-            } %>
-        </ul>
-     </section>
-     <footer>
-        <div>
-            <a href="#" target="_blank">Tutorial</a>
+        <form action="/add" method="POST" class="flex flex-col">
+            <div class="flex form-container"> 
+                <!-- Input Title -->
+                <div class="flex flex-col align-center">
+                    <label for="title">Title</label>
+                    <input 
+                        placeholder="The Stranger" 
+                        type="text"
+                        name="title"
+                        id="title"
+                        required >
+                </div>
+                <!-- Input Author -->
+                <div class="flex flex-col align-center">
+                    <label for="author">Author</label>
+                    <input 
+                        placeholder="Albert Camus" 
+                        type="text"
+                        name="author"
+                        id="author"
+                        required >
+                </div>
+            </div>
+            <button type="submit" class="mt-1">Add Book</button>
+        </form>
+    </section>
+    <!-- Section with both lists -->
+    <section class="lists-section flex flex-col align-center">
+        <!-- Want To Read List -->
+        <section class="want-sect flex flex-col align-center">
+            <h2>Want To Read</h2>
+            <ul class="flex flex-wrap space-evenly">
+                <% for(const book of bookList) { 
+                    if(book.read === false) { %>
+                        <li class="book flex flex-col justify-center">
+                            <%= book.title %> by <%= book.author %>
+                            <input type="button" class="delete btn mt-1" value="Delete"></input>
+                            <input type="button" class="mark-read btn" value="Mark Read"></input>
+                        </li>
+                    <% }
+                } %>
+            </ul>
+        </section>
+        <!-- Read List -->
+        <section class="read-sect flex flex-col align-center">
+            <h2>Read</h2>
+            <ul class="flex flex-wrap space-evenly">
+                <% for(const book of bookList) { 
+                    if(book.read === true) { %>
+                        <li class="book flex flex-col justify-center">
+                            <%= book.title %> by <%= book.author %>
+                            <input type="button" class="delete btn mt-1" value="Delete"></input>
+                            <input type="button" class="mark-unread btn" value="Mark Unread"></input>
+                        </li>
+                    <% }
+                } %>
+            </ul>
+        </section>
+    </section>
+     <footer class="flex flex-col align-center mt-1">
+        <div class="mb-1">
+            <a href="#" target="_blank" class="mr-1">Tutorial</a>
             <a href="https://github.com/raisa-d/library-lite-demo" target="_blank">Source Code</a>
         </div>
         <small>&copy; Raisa Dorzback</small>
