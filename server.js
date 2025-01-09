@@ -18,7 +18,16 @@ CONNECTING TO DATABASE
 =========== */
 async function connectToDatabase() {
   try {
-    const client = await MongoClient.connect(uri);
+    const client = await MongoClient.connect(uri, {
+      useNewUrlParser: true,    // Use modern parsing
+      useUnifiedTopology: true, // Unified topology engine
+      tls: true,                // Enforce TLS
+      serverApi: {
+        version: ServerApiVersion.v1, // Use the latest API version
+        strict: true,                 // Throw errors for non-standard behavior
+        deprecationErrors: true       // Enable deprecation warnings
+      }
+    });
     console.log('Connected to DB');
     const db = client.db('Library');
     const books = db.collection('bookData');
