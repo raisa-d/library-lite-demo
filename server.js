@@ -13,9 +13,6 @@ const app = express(); // create instance of Express app
 const PORT = process.env.PORT;
 const uri = process.env.DB_STRING;
 const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  tls: true,
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
