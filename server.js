@@ -4,7 +4,7 @@
 IMPORTS
 =========== */
 import express from 'express'; // import express with ES Modules
-import { MongoClient } from 'mongodb'; // import MongoClient with ES Modules
+import { MongoClient, ServerApiVersion } from 'mongodb'; // import MongoClient with ES Modules
 
 /* ===========
 VARIABLES
