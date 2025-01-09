@@ -11,8 +11,7 @@ VARIABLES
 =========== */
 const app = express(); // create instance of Express app
 const PORT = process.env.PORT;
-const password = process.env.DB_PASSWORD;
-const uri = `mongodb+srv://j97129688:${password}@cluster0.u0qtw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = process.env.DB_STRING;
 
 /* ===========
 CONNECTING TO DATABASE
