@@ -9,12 +9,12 @@
 </head>
 <body>
     <h1>Welcome To The Library Lite Demo!</h1>
-    <!-- Add Books Form -->
+    <!-- Form Section -->
     <section class="form-section flex flex-col align-center justify-center">
         <h2>Add Books</h2>
         <form action="/add" method="POST" class="flex flex-col">
             <div class="flex form-container"> 
-                <!-- Input Title -->
+                <!-- Title Input -->
                 <div class="flex flex-col align-center">
                     <label for="title">Title</label>
                     <input 
@@ -24,7 +24,7 @@
                         id="title"
                         required >
                 </div>
-                <!-- Input Author -->
+                <!-- Author Input -->
                 <div class="flex flex-col align-center">
                     <label for="author">Author</label>
                     <input 
@@ -38,16 +38,18 @@
             <button type="submit" class="mt-1">Add Book</button>
         </form>
     </section>
-    <!-- Section with both lists -->
-    <section class="lists-section flex flex-col align-center">
+    <!-- Lists Container -->
+    <section class="lists-container flex flex-col align-center">
         <!-- Want To Read List -->
         <section class="want-sect flex flex-col align-center">
             <h2>Want To Read</h2>
             <ul class="flex flex-wrap space-evenly">
-                <% for(const book of bookList) { 
+                <% for(const book of bookInfo) { 
                     if(book.read === false) { %>
                         <li class="book flex flex-col justify-center">
-                            <%= book.title %> by <%= book.author %>
+                            <span>
+                                <%= book.title %> by <%= book.author %>
+                            </span>
                             <input type="button" class="delete btn mt-1" value="Delete"></input>
                             <input type="button" class="mark-read btn" value="Mark Read"></input>
                         </li>
@@ -59,10 +61,12 @@
         <section class="read-sect flex flex-col align-center">
             <h2>Read</h2>
             <ul class="flex flex-wrap space-evenly">
-                <% for(const book of bookList) { 
+                <% for(const book of bookInfo) { 
                     if(book.read === true) { %>
                         <li class="book flex flex-col justify-center">
-                            <%= book.title %> by <%= book.author %>
+                            <span>
+                                <%= book.title %> by <%= book.author %>
+                            </span>
                             <input type="button" class="delete btn mt-1" value="Delete"></input>
                             <input type="button" class="mark-unread btn" value="Mark Unread"></input>
                         </li>

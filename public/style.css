@@ -77,7 +77,7 @@
     }
 
 /* LISTS SECTION */
-.lists-section h2 {
+.lists-container h2 {
     text-align: center;
     font-weight: normal;
     border-bottom: 0.1rem solid rgba(11, 70, 64, 0.5);
@@ -124,7 +124,7 @@
 
 /* MEDIA QUERIES */
 @media all and (min-width: 765px) {
-    .lists-section {
+    .lists-container {
         flex-direction: row;
         align-items: flex-start;
     }

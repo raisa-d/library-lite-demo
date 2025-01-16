@@ -55,7 +55,7 @@ function createServer(books) {
   app.get('/', async (request, response) => {
     try {
       const bookList = await books.find().toArray();
-      response.render('index.ejs', { bookList: bookList }) // render EJS, pass in bookList
+      response.render('index.ejs', { bookInfo: bookList }) // render EJS, pass in bookList
     } catch(err) {
       console.error(`Error retrieving list of books ${err}`);
     };
@@ -114,7 +114,7 @@ async function markBook (request, response, read, books) {
 };
 
 /* ===========
-START APPLICATION
+MAIN FUNCTION TO START APPLICATION
 =========== */
 async function main() {
   try {
