@@ -1,9 +1,9 @@
 // main.js
-const deleteButtons = document.querySelectorAll('.delete');
+const deleteButtons = Array.from(document.querySelectorAll('.delete'));
 const markReadButtons = document.querySelectorAll('.mark-read');
 const markUnreadButtons = document.querySelectorAll('.mark-unread');
 
-Array.from(deleteButtons).forEach(button => {
+deleteButtons.forEach(button => {
     button.addEventListener('click', deleteBook);
 });
 
