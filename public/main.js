@@ -1,17 +1,17 @@
 // main.js
 const deleteButtons = Array.from(document.querySelectorAll('.delete'));
-const markReadButtons = document.querySelectorAll('.mark-read');
-const markUnreadButtons = document.querySelectorAll('.mark-unread');
+const markReadButtons = Array.from(document.querySelectorAll('.mark-read'));
+const markUnreadButtons = Array.from(document.querySelectorAll('.mark-unread'));
 
 deleteButtons.forEach(button => {
     button.addEventListener('click', deleteBook);
 });
 
-Array.from(markReadButtons).forEach(button => {
+markReadButtons.forEach(button => {
     button.addEventListener('click', markRead);
 });
 
-Array.from(markUnreadButtons).forEach(button => {
+markUnreadButtons.forEach(button => {
     button.addEventListener('click', markUnread);
 });
 
@@ -54,7 +54,7 @@ async function mark(endpoint, bookTitle) {
         const data = await result.json();
         location.reload();
     } catch(err) {
-        console.log(`Error marking book: ${err}`);
+        console.error(`Error marking book: ${err}`);
     };
 };
 

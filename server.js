@@ -87,28 +87,32 @@ function createServer(books) {
   });
 
   // handle UPDATE request - mark read
-  app.put('/markRead', async (request, response) => await markBook(request, response, true, books));
+  app.put('/markRead', async (request, response) => {
+    await markBook(request, response, true, books)
+  });
 
   // handle UPDATE request - mark unread
-  app.put('/markUnread', async (request, response) => await markBook(request, response, false, books));
+  app.put('/markUnread', async (request, response) => {
+    await markBook(request, response, false, books)
+  });
 
   // have server listen on PORT
   app.listen(PORT, () => console.log('Server is running away!!!'));
 };
 
 // function to mark book as read or unread
-async function markBook (request, response, read, books) {
+async function markBook (request, response, isRead, books) {
   try {
     const result = await books.updateOne({
       title: request.body.title
     },{
       $set: {
-        read: read
+        read: isRead
       }
     });
-    response.json(`Marked ${read ? 'Read' : 'Unread'}`)
+    response.json(`Marked ${isRead ? 'Read' : 'Unread'}`)
   } catch(err) {
-    console.log(`Failed to mark book as ${read ? 'read' : 'unread'}: ${err}`);
+    console.error(`Failed to mark book as ${isRead ? 'read' : 'unread'}: ${err}`);
   }
 };
 
