@@ -62,7 +62,7 @@ function createServer(books) {
   });
 
   // handle POST request - add new book
-  app.post('/add', async (request, response) => {
+  app.post('/addBook', async (request, response) => {
     try {
       const result = await books.insertOne({
         title: request.body.title,
