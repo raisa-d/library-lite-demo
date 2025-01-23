@@ -22,7 +22,7 @@ async function deleteBook() {
         // manipulate string to access the book title from textContent
         bookTitle = bookTitle.trim().split(' by ')[0];
         // make fetch request
-        const result = await fetch('/delete', {
+        const result = await fetch('/deleteBook', {
             // specify the delete HTTP method
             method: 'delete',
             // specify we are sending JSON

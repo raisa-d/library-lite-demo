@@ -76,7 +76,7 @@ function createServer(books) {
   });
 
   // handle DELETE request - delete book
-  app.delete('/delete', async (request, response) => {
+  app.delete('/deleteBook', async (request, response) => {
     try {
       // delete book by title
       const result = await books.deleteOne({title: request.body.title});
